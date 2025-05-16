@@ -38,6 +38,7 @@
       box-shadow: 0 2px 4px rgba(0,0,0,.15);
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     header h1 {
@@ -46,7 +47,7 @@
     }
 
     nav {
-      margin-right: auto; /* push avatar to the far right */
+      margin-right: auto; /* push avatar to right */
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -63,8 +64,8 @@
       text-decoration: underline;
     }
 
-    /* Button style for Download CV */
-    nav a.btn {
+    /* Download button */
+    .btn {
       background: #fff;
       color: var(--primary);
       padding: 0.35rem 0.9rem;
@@ -72,9 +73,10 @@
       font-weight: 600;
       text-decoration: none;
       margin-left: 0.5rem;
+      white-space: nowrap;
     }
 
-    nav a.btn:hover {
+    .btn:hover {
       background: var(--primary-light);
       color: #fff;
     }
@@ -94,9 +96,8 @@
       margin: auto;
     }
 
-    /* Alternate background for visual rhythm */
     section:nth-of-type(odd) {
-      background: #ffffff;
+      background: #fff;
     }
 
     h2 {
@@ -146,7 +147,6 @@
       text-decoration: underline;
     }
 
-    /* --- Footer --- */
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -221,6 +221,12 @@
       <li>Week 8 – <a href="#">Evaluation &amp; Metrics Dashboard</a></li>
       <li>Week 9 – <a href="#">Final Project Proposal</a></li>
       <li>Week 10 – <a href="#">Capstone Demo &amp; Report</a></li>
+
+      <!-- New project entry -->
+      <li>
+        <strong>Workshop 2: Automated Data Analysis</strong> — <em>Analyzed Gapminder data to explore relationships between two global indicators using AI tools.</em>
+        <a href="AC_Analysis%20w.%20Julius_week2.pdf" target="_blank">Report (PDF)</a>
+      </li>
     </ul>
   </section>
 
