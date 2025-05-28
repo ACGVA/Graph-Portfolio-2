@@ -1,242 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Hong Anh Chu | Generative AI for Work & Research</title>
-  <style>
-    :root {
-      /* Olive & Pale Green palette */
-      --primary: #556b2f;          /* olive green */
-      --primary-light: #a9d9a0;   /* pale green */
-      --text: #1a1a1a;
-      --bg: #f6fff6;              /* very light pale green */
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    }
-
-    body {
-      line-height: 1.6;
-      color: var(--text);
-      background: var(--bg);
-      scroll-behavior: smooth;
-    }
-
-    /* --- Header & Navigation --- */
-    header {
-      background: var(--primary);
-      color: #fff;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 4px rgba(0,0,0,.15);
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    header h1 {
-      font-size: 1.5rem;
-      margin-right: 1rem;
-    }
-
-    nav {
-      margin-right: auto; /* push avatar to right */
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: #fff;
-      margin-right: 1rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Download button */
-    .btn {
-      background: #fff;
-      color: var(--primary);
-      padding: 0.35rem 0.9rem;
-      border-radius: 4px;
-      font-weight: 600;
-      text-decoration: none;
-      margin-left: 0.5rem;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      background: var(--primary-light);
-      color: #fff;
-    }
-
-    .avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #fff;
-    }
-
-    /* --- Sections --- */
-    section {
-      padding: 4rem 1rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    section:nth-of-type(odd) {
-      background: #fff;
-    }
-
-    h2 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-size: 1.75rem;
-    }
-
-    h3 {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-      color: var(--primary-light);
-    }
-
-    .subtitle {
-      color: var(--primary-light);
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    ul,
-    ol {
-      margin-left: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
-    ul.weekly-list {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul.weekly-list li {
-      margin-bottom: 0.75rem;
-    }
-
-    ul.weekly-list a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    ul.weekly-list a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Hong Anh Chu | Portfolio - Generative AI for Work & Research</title>
+<style>
+:root {
+  --primary:#556B2F;      /* olive green */
+  --bg:#eaf8e0;           /* pale green */
+  --text:#333;
+  --accent:#6B8E23;       /* dark olive */
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;color:var(--text);background:var(--bg);} 
+header{background:var(--primary);color:#fff;padding:1.5rem 1rem;position:sticky;top:0;z-index:100;}
+header h1{font-size:1.75rem;margin-bottom:.5rem;}
+nav ul{display:flex;gap:1rem;list-style:none;}
+nav a{color:#fff;text-decoration:none;font-weight:bold;}
+nav a:hover{text-decoration:underline;}
+section{padding:3rem 1rem;max-width:900px;margin:auto;}
+section h2{font-size:1.5rem;margin-bottom:1rem;color:var(--accent);} 
+#about-me .highlights{display:flex;flex-wrap:wrap;gap:.5rem;}
+.badge{background:var(--accent);color:#fff;padding:.25rem .5rem;border-radius:.25rem;font-size:.85rem;}
+.profile{width:150px;height:150px;object-fit:cover;border-radius:50%;display:block;margin:0 auto 1rem;box-shadow:0 0 5px rgba(0,0,0,0.25);} 
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:.5rem 1rem;border-radius:.25rem;text-decoration:none;font-weight:bold;margin-top:1rem;}
+.btn:hover{background:#556B2F;}
+#weekly ul{padding-left:1.2rem;}
+#weekly a{color:var(--accent);font-weight:bold;text-decoration:none;}
+#weekly a:hover{text-decoration:underline;}
+footer{background:#445421;color:#eee;text-align:center;padding:1rem;font-size:.85rem;}
+@media(min-width:600px){
+  nav ul{justify-content:flex-end;}
+}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Dr. Hong Anh Chu – Portfolio</h1>
-    <nav>
-      <a href="#about-me">About me</a>
-      <a href="#about-course">About the course</a>
-      <a href="#weekly-submissions">Weekly submissions</a>
-      <a href="https://drive.google.com/file/d/1ZUBzIyftN7SJ2IbUQ0WKrgeLSSs9p17e/view?usp=sharing" target="_blank" rel="noopener" class="btn">Download CV (PDF)</a>
-    </nav>
-    <img src="https://github.com/ACGVA/Graph-Portfolio-2/blob/main/valeux2.jpeg?raw=true" alt="Portrait of Dr. Hong Anh Chu" class="avatar" />
-  </header>
-
-  <!-- About Me Section -->
-  <section id="about-me">
-    <h2>About me</h2>
-    <p class="subtitle">Health Information Systems Technical Lead, World Health Organization</p>
-    <p>
-      I am a Geneva-based public health professional with 25+ years’ experience in strengthening health information systems, monitoring &amp; evaluation, and evidence-based policy for low- and middle-income countries. I currently lead the global <em>SCORE</em> assessment of health data systems capacity in 160+ countries and coordinate the development of WHO norms and standards for routine health data and data quality assurance.
-    </p>
-    <h3>Career highlights</h3>
-    <ul class="bio-list">
-      <li>Directed two global rounds (2020 &amp; 2025) of the SCORE health data systems capacity assessment.</li>
-      <li>Expanded DHIS2 adoption from 30 to 70 countries, including rapid adaptation for COVID-19 surveillance.</li>
-      <li>Mobilised and managed projects totalling USD 3 million.</li>
-      <li>Recipient of the WHO “Best Field Impact &amp; Innovation” award (2017).</li>
+<header>
+  <h1>Dr. Hong Anh Chu</h1>
+  <nav>
+    <ul>
+      <li><a href="#about-me">About Me</a></li>
+      <li><a href="#course">About the Course</a></li>
+      <li><a href="#weekly">Weekly Submissions</a></li>
     </ul>
+  </nav>
+</header>
 
-    <h3>Key skills</h3>
-    <ul class="skills-list">
-      <li>Health Information Systems &amp; DHIS2</li>
-      <li>Monitoring &amp; Evaluation, Result-based management</li>
-      <li>Strategic planning &amp; policy development</li>
-      <li>Data analysis &amp; reporting</li>
-    </ul>
-  </section>
+<section id="about-me">
+  <h2>About Me</h2>
+  <img src="https://github.com/ACGVA/Graph-Portfolio-1/blob/main/CHA-2.JPG?raw=true" alt="Dr. Hong Anh Chu" class="profile">
+  <p>Result-focused public health professional specializing in health information systems, monitoring &amp; evaluation, and data-driven decision-making in global health.</p>
+  <p>Currently Health Information System Technical Lead at the World Health Organization headquarters in Geneva, Switzerland.</p>
+  <div class="highlights">
+    <span class="badge">25+ years experience</span>
+    <span class="badge">Global HIS capacity assessments (165 countries)</span>
+    <span class="badge">Data quality assurance frameworks</span>
+    <span class="badge">Resource mobilization &amp; team leadership</span>
+  </div>
+  <p><strong>Education:</strong> MSc Public Health, London School of Hygiene &amp; Tropical Medicine; MD, Hanoi Medical University</p>
+  <p><strong>Key Skills:</strong> Health Information Systems • Monitoring &amp; Evaluation • Strategic Planning • Data Analysis • Result-based Management</p>
+  <a class="btn" href="https://drive.google.com/drive/folders/1jEL7ZwaTQKE6f9rfBGvcy7zogSwRbEQm" target="_blank">Download CV (PDF)</a>
+</section>
 
-  <!-- About Course Section -->
-  <section id="about-course">
-    <h2>About the course</h2>
-    <p>
-      <strong>Generative AI for Work &amp; Research</strong> (GRAPH Courses, Q2 2025) is a 10-week, project-based programme that equips professionals and researchers with the skills to harness state-of-the-art generative models in their day-to-day workflows. Through weekly labs and a capstone project, we experiment with large language models, multimodal generation and autonomous agents to automate knowledge synthesis, create novel content and accelerate decision-making.
-    </p>
-    <h3>Learning outcomes</h3>
-    <ol class="course-outcomes">
-      <li>Explain the architecture and mechanics of leading generative model families (LLMs, diffusion, transformers).</li>
-      <li>Design effective prompts and toolchains that integrate generative AI into professional tasks.</li>
-      <li>Prototype and evaluate an AI-powered solution to a real research or workplace challenge.</li>
-      <li>Apply responsible-AI principles, including bias mitigation, data privacy and transparency.</li>
-    </ol>
-  </section>
+<section id="course">
+  <h2>About the Course</h2>
+  <p><em>Generative AI for Work &amp; Research Productivity</em> is an 8-week hands-on program that teaches professionals how to harness no-code AI tools to automate data analysis, content creation, knowledge management, and routine tasks.</p>
+  <ul>
+    <li>Automate time-consuming document, spreadsheet, and data tasks</li>
+    <li>Organize knowledge and conduct literature reviews efficiently</li>
+    <li>Develop custom chatbots to support projects and teams</li>
+    <li>Create professional visuals and presentations with AI</li>
+    <li>Apply learning in a capstone project with real-time support through workshops and forums</li>
+  </ul>
+</section>
 
-  <!-- Weekly Submissions Section -->
-  <section id="weekly-submissions">
-    <h2>My weekly submissions & projects</h2>
-    <p class="subtitle">Links will appear here as the course progresses.</p>
-    <ul class="weekly-list">
-      <li>Week 1 – <a href="#">Prompt Engineering Reflection</a></li>
-      <li>Week 2 – <a href="#">Generative Literature Review</a></li>
-      <li>Week 3 – <a href="#">Data-to-Text Pipeline</a></li>
-      <li>Week 4 – <a href="#">Ethical Assessment Report</a></li>
-      <li>Week 5 – <a href="#">Agent-based Workflow Automation</a></li>
-      <li>Week 6 – <a href="#">Diffusion Model Experiment</a></li>
-      <li>Week 7 – <a href="#">Domain-specific Fine-tuning</a></li>
-      <li>Week 8 – <a href="#">Evaluation &amp; Metrics Dashboard</a></li>
-      <li>Week 9 – <a href="#">Final Project Proposal</a></li>
-      <li>Week 10 – <a href="#">Capstone Demo &amp; Report</a></li>
+<section id="weekly">
+  <h2>My Weekly Submissions</h2>
+  <p>Links to each week’s assignment will appear here as the course progresses:</p>
+  <ul>
+    <li>Week&nbsp;1: <em>Coming soon</em></li>
+    <li><a href="https://github.com/ACGVA/Graph-Portfolio-2/blob/main/Anh%20Chu_week2%20assignment.pdf?raw=true" target="_blank">Week&nbsp;2: Assignment (PDF)</a></li>
+    <li><a href="https://github.com/ACGVA/Graph-Portfolio-2/blob/main/AC_week3%20assignment_job%20market%20analysis.pdf?raw=true" target="_blank">Week&nbsp;3: Job Market Analysis (PDF)</a></li>
+    <li>Week&nbsp;4: <em>Coming soon</em></li>
+    <li>Week&nbsp;5: <em>Coming soon</em></li>
+    <li>Week&nbsp;6: <em>Coming soon</em></li>
+    <li>Week&nbsp;7: <em>Coming soon</em></li>
+    <li>Week&nbsp;8: <em>Coming soon</em></li>
+  </ul>
+</section>
 
-      <!-- New project entry -->
-      <li>
-        <strong>Workshop 2: Automated Data Analysis</strong> — <em>Analyzed Gapminder data to explore relationships between two global indicators using AI tools.</em>
-        <a href="https://acgva.github.io/Graph-Portfolio-2/" target="_blank" rel="noopener">View report</a>
-      </li>
-    </ul>
-  </section>
-
-  <footer>
-    &copy; <span id="year"></span> Dr. Hong Anh Chu
-  </footer>
-
-  <script>
-    // Update year dynamically
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<footer>
+  <p>&copy; 2025 Dr. Hong Anh Chu — Portfolio for Generative AI for Work &amp; Research</p>
+</footer>
 </body>
 </html>
