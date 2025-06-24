@@ -6,10 +6,10 @@
 <title>Dr. Hong Anh Chu | Portfolio - Generative AI for Work & Research</title>
 <style>
 :root {
-  --primary:#556B2F;       /* olive green */
+  --primary:#556B2F;        /* olive green */
   --bg:#eaf8e0;            /* pale green */
   --text:#333;
-  --accent:#6B8E23;        /* dark olive */
+  --accent:#6B8E23;         /* dark olive */
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;color:var(--text);background:var(--bg);}
@@ -31,6 +31,15 @@ section h2{font-size:1.5rem;margin-bottom:1rem;color:var(--accent);}
 #contact-consultation{margin-top:2rem;color:var(--accent);}
 iframe{border:0;max-width:100%;}
 footer{background:#445421;color:#eee;text-align:center;padding:1rem;font-size:.85rem;}
+/* New style for the hidden image */
+.hidden-image {
+    display: none; /* Initially hide the image */
+    max-width: 100%; /* Ensure image is responsive */
+    height: auto;
+    margin-top: 1rem; /* Add some space above the image */
+    border-radius: 0.5rem; /* Rounded corners for the image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+}
 @media(min-width:600px){
   nav ul{justify-content:flex-end;}
 }
@@ -61,7 +70,7 @@ footer{background:#445421;color:#eee;text-align:center;padding:1rem;font-size:.8
   </div>
   <p><strong>Education:</strong> MSc Public Health, London School of Hygiene &amp; Tropical Medicine; MD, Hanoi Medical University</p>
   <p><strong>Key Skills:</strong> Health Information Systems • Monitoring &amp; Evaluation • Strategic Planning • Data Analysis • Result-based Management</p>
-  <a class="btn" href="https://drive.google.com/drive/folders/1jEL7ZwaTQKE6f9rfBGvcy7zogSwRbEQm" target="_blank">Download CV (PDF)</a>
+  <a class="btn" href="https://drive.google.com/drive/folders/1jEL7ZwaTQKE6f9rfBGvcy7zogSwRbEQl" target="_blank">Download CV (PDF)</a>
 </section>
 
 <section id="course">
@@ -83,7 +92,11 @@ footer{background:#445421;color:#eee;text-align:center;padding:1rem;font-size:.8
     <li>Week&nbsp;1: <em>Coming soon</em></li>
     <li><a href="https://github.com/ACGVA/Graph-Portfolio-2/blob/main/Anh%20Chu_week2%20assignment.pdf?raw=true" target="_blank">Week&nbsp;2: Assignment (PDF)</a></li>
     <li><a href="https://github.com/ACGVA/Graph-Portfolio-2/blob/main/AC_week3%20assignment_job%20market%20analysis.pdf?raw=true" target="_blank">Week&nbsp;3: Job Market Analysis (PDF)</a></li>
-    <li>Week&nbsp;4: <em>Coming soon</em></li>
+    <!-- Updated Week 4 link to show the image -->
+    <li>
+        <a href="javascript:void(0);" onclick="toggleImage('week4Image')">Week&nbsp;4: Chatbot Photo</a>
+        <img id="week4Image" src="https://github.com/ACGVA/Graph-Portfolio-2/raw/main/GenAI%20week4_chatbot.JPG" alt="Week 4 Chatbot Photo" class="hidden-image">
+    </li>
     <li>Week&nbsp;5: <em>Coming soon</em></li>
     <li><a href="https://github.com/ACGVA/Graph-Portfolio-2/blob/main/Graph%20Courses%20-%20Al%20Portfolio%20-%20Showcase%20Ad_wk6.pdf" target="_blank">Week&nbsp;6: Assignment (PDF)</a></li>
     <li>Week&nbsp;7: <em>Coming soon</em></li>
@@ -99,5 +112,23 @@ footer{background:#445421;color:#eee;text-align:center;padding:1rem;font-size:.8
 </footer>
 <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2025/06/15/21/20250615214039-QFKQV45E.js"></script>
+<script>
+    /**
+     * Toggles the visibility of an HTML element by changing its display style.
+     * @param {string} elementId - The ID of the HTML element to toggle.
+     */
+    function toggleImage(elementId) {
+        const image = document.getElementById(elementId);
+        if (image) {
+            if (image.style.display === 'none' || image.style.display === '') {
+                image.style.display = 'block'; // Show the image
+            } else {
+                image.style.display = 'none'; // Hide the image
+            }
+        } else {
+            console.error(`Element with ID '${elementId}' not found.`);
+        }
+    }
+</script>
 </body>
 </html>
